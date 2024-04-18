@@ -1,0 +1,30 @@
+package EsercizioBiblioteca;
+import java.util.Scanner;
+
+public class Main {
+
+	
+	
+	public static void main(String[] args) {
+		
+		Biblioteca b = new Biblioteca();
+		
+		
+		
+		libro l1 = new libro("Il piccolo principe", 5, 0);
+		libro l2 = new libro("I pirati dei caraibi", 3, 0);
+		
+		b.aggiungiLibro(l1);
+		b.aggiungiLibro(l2);
+		
+		
+		
+		for (Biblioteca libro : b.getLibri()) {
+			System.out.println(libro);
+		}
+		
+		
+		
+		
+	}
+}
