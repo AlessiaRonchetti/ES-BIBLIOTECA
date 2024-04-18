@@ -1,0 +1,68 @@
+package EsercizioBiblioteca;
+
+import java.util.ArrayList;
+
+public class Biblioteca {
+
+	
+	private ArrayList<libro> libri;
+	
+	public Biblioteca() {
+		
+		libri = new ArrayList<>();
+	}
+	
+	public ArrayList<libro> getLibri() {
+		return libri;
+	}
+
+	public void aggiungiLibro(libro l) {
+		libri.add(l);
+	}
+	
+	public void rimuoviLibro(libro l) {
+		libri.remove(l);
+	}
+	
+	public void prestaLibro(libro l) {
+		
+		
+		if(l.getNumeroCopieDisponibili() > 0) {
+			
+			l.setNumeroCopieDisponibili(l.getNumeroCopieDisponibili() - 1);
+			
+			l.setCopiePrestate(l.getCopiePrestate() + 1);
+			
+			
+			
+		} else {
+			
+			System.out.println("Errore");
+			
+		}
+	}
+	
+	
+	public void restituisciLibro(libro l) {
+		
+		
+		if(l.getCopiePrestate() > 0) {
+			
+			l.setNumeroCopieDisponibili(l.getNumeroCopieDisponibili() + 1);
+			
+			l.setCopiePrestate(l.getCopiePrestate() - 1);
+			
+		} else {
+			
+			System.out.println("Errore");
+			
+		}
+	}
+}
+	
+
+	
+	
+	
+	
+
