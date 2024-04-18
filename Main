@@ -43,8 +43,8 @@ public class Main {
 
 				System.out.println("Ecco i libri disponibili:");
 
-				for (Biblioteca libro : b.getLibri()) {
-					System.out.println(libro);
+				for (Biblioteca libri : b.getLibri()) {
+					System.out.println(libri);
 
 				}
 
@@ -54,10 +54,8 @@ public class Main {
 
 				b.prestaLibro(b.getLibri().get(risposta1));
 
-				for (Biblioteca libro : b.getLibri()) {
-					System.out.println(libro);
-
-				}
+				System.out.println("Hai preso in prestito questo libro: " + b.getLibri().get(risposta1).getTitolo());
+				
 				break;
 
 			case 2:
@@ -68,16 +66,11 @@ public class Main {
 
 				b.restituisciLibro(b.getLibri().get(risposta2));
 
-				System.out.println();
+				System.out.println("Hai riconsegnato questo libro: " + b.getLibri().get(risposta2).getTitolo());
 
-				for (Biblioteca libro : b.getLibri()) {
-					System.out.println(libro);
-
-				}
-
-			
 				
-			
+				
+				
 				
 
 			}
