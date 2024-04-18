@@ -1,0 +1,52 @@
+package EsercizioBiblioteca;
+
+
+
+public class libro extends Biblioteca{
+
+	private String titolo;
+	private int numeroCopieDisponibili;
+	private int copiePrestate;
+
+	public libro(String titolo, int numeroCopieDisponibili, int copiePrestate) {
+		this.titolo = titolo;
+		this.numeroCopieDisponibili = numeroCopieDisponibili;
+		this.copiePrestate = copiePrestate;
+		
+	}
+
+	public String getTitolo() {
+		return titolo;
+	}
+
+	public int getNumeroCopieDisponibili() {
+		return numeroCopieDisponibili;
+	}
+
+	public int getCopiePrestate() {
+		return copiePrestate;
+	}
+
+	public void setTitolo(String titolo) {
+		this.titolo = titolo;
+	}
+
+	public void setNumeroCopieDisponibili(int numeroCopieDisponibili) {
+		this.numeroCopieDisponibili = numeroCopieDisponibili;
+	}
+
+	public void setCopiePrestate(int copiePrestate) {
+		this.copiePrestate = copiePrestate;
+	}
+	
+	public String toString(){
+			
+			return String.format("Il titolo del libro è : %s, il numero di copie disponibili sono: %d, il numero di copie in prestito sono: %d.", getTitolo(), getNumeroCopieDisponibili(), getCopiePrestate());
+		}
+		
+			
+		}
+		
+		
+	
+	
