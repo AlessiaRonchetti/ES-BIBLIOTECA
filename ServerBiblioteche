@@ -1,0 +1,9 @@
+package EsercizioBiblioteca;
+
+public abstract class ServerBiblioteche {
+
+	
+	public abstract void prestaLibro(libro l);
+	
+	public abstract void restituisciLibro(libro l);
+}
