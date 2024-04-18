@@ -2,7 +2,7 @@ package EsercizioBiblioteca;
 
 import java.util.ArrayList;
 
-public class Biblioteca {
+public  class Biblioteca {
 
 	
 	private ArrayList<libro> libri;
@@ -37,7 +37,7 @@ public class Biblioteca {
 			
 		} else {
 			
-			System.out.println("Errore");
+			System.out.println("Errore, non sono presenti copie disponibili.");
 			
 		}
 	}
@@ -54,15 +54,12 @@ public class Biblioteca {
 			
 		} else {
 			
-			System.out.println("Errore");
+			System.out.println("Errore, non risulta in prestito questo libro.");
 			
 		}
 	}
 }
 	
 
-	
-	
-	
 	
 
