@@ -1,0 +1,19 @@
+DOCUMENTAZIONE ESERCIZIO BIBLIOTECA JAVA:
+
+Il nostro progetto riguarda l’utilizzo di un software automatizzato per la gestione delle richieste dei clienti in una biblioteca generica.
+
+Attraverso di esso i nostri clienti avranno un metodo semplice, sicuro ed efficace che tenga traccia dei libri disponibili e delle copie in prestito per ogni libro.
+
+Il meccanismo è molto semplice, è il software stesso a dare al cliente delle opzioni e quest’ultimo attraverso gli indici dell’interfaccia può scegliere se restituire un libro o prenderne uno in prestito.
+Il sistema terrà traccia dei cambiamenti avvenuti nelle disponibilità delle copie e aggiornerà automaticamente la lista dei libri a disposizione.
+
+Il primo passo è stato la costruzione di una classe astratta al cui interno abbiamo inserito i metodi che ritenevamo più corposi.
+
+Il passo seguente è stata la creazione di una classe figlia denominata biblioteca, al suo interno abbiamo creato una lista rappresentante il catalogo dei libri disponibili e i metodi per poter tener traccia delle movimentazioni dei prestiti in entrata ed in uscita.
+
+Gli oggetti del nostro catalogo non sono oggetti “Biblioteca”, sono infatti stati definiti all’interno di una sua sub-classe “Libro”.
+
+Qui attraverso un costruttore abbiamo definito le caratteristiche essenziali che ogni libro deve avere per il corretto funzionamento del nostro server e la fruibilità dei clienti.
+Queste sono: titolo, copie disponibili e copie prestate.
+
+A questo punto attraverso metodi getter abbiamo riportato nella nostra classe main il nostro catalogo, i metodi per inserire i nostri librai suo interno e un dialogo col terminale per poter utilizzare i metodi che tengono traccia degli ordini.
