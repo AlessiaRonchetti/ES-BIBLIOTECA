@@ -2,7 +2,7 @@ package EsercizioBiblioteca;
 
 import java.util.ArrayList;
 
-public  class Biblioteca {
+public class Biblioteca extends ServerBiblioteche{
 
 	
 	private ArrayList<libro> libri;
@@ -58,7 +58,14 @@ public  class Biblioteca {
 			
 		}
 	}
+
+	
 }
+	
+
+	
+	
+	
 	
 
 	
