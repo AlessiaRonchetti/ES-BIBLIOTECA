@@ -21,61 +21,97 @@ public class Main {
 		b.aggiungiLibro(l2);
 		b.aggiungiLibro(l3);
 
-		while (i) {
-			
-			System.out.println("Vuoi fare un'azione? si-no");
-			String risposta3 = myStr.nextLine();
-			
-			
-			
-			if(risposta3.equalsIgnoreCase("no")) {
-				i = false;
-				break;
-			}
+		System.out.println("Ciao, benvenuto nel server della biblioteca, sei admin o utente? 1-admin, 2-utente");
+		int risp1 = myInt.nextInt();
 
-			System.out.println("1-Vuoi noleggiare un libro?");
-			System.out.println("2-Vuoi consegnare un libro?");
+		switch (risp1) {
 
-			int risposta = myInt.nextInt();
+		case 1:
+			// Codice per l'amministratore
+			break;
+		case 2:
 
-			switch (risposta) {
-			case 1:
+			Utente utente = null;
 
-				System.out.println("Ecco i libri disponibili:");
+			boolean loggedIn = false;
 
-				for (Biblioteca libri : b.getLibri()) {
-					System.out.println(libri);
+			while (!loggedIn) {
+
+				System.out.println("Benvenuto utente, sei già registrato? si-no");
+
+				String risp2 = myStr.nextLine();
+
+				if (risp2.equals("no")) {
+
+					System.out.println("Inserisci nomeUtente e password");
+					String nomeUtente = myStr.nextLine();
+					String passwordUtente = myStr.nextLine();
+
+					utente = new Utente(nomeUtente, passwordUtente);
+
+					utente.registrazione(nomeUtente, passwordUtente);
+
+					System.out.println("Complimenti la registrazione è andata a buon fine.");
 
 				}
 
-				System.out.println("Quale libro vuoi noleggiare?");
+				System.out.println("Ora puoi fare il login.");
+				System.out.println("Inserisci nomeUtente e password");
+				String nome = myStr.nextLine();
+				String password = myStr.nextLine();
 
-				int risposta1 = myInt.nextInt() - 1;
-
-				b.prestaLibro(b.getLibri().get(risposta1));
-
-				System.out.println("Hai preso in prestito questo libro: " + b.getLibri().get(risposta1).getTitolo());
-				
-				break;
-
-			case 2:
-
-				System.out.println("Quale libro vuoi riconsegnare?");
-
-				int risposta2 = myInt.nextInt() - 1;
-
-				b.restituisciLibro(b.getLibri().get(risposta2));
-
-				System.out.println("Hai riconsegnato questo libro: " + b.getLibri().get(risposta2).getTitolo());
-
-				
-				
-				
-				
+				loggedIn = utente.login(nome, password);
 
 			}
+			while (i) {
 
+				System.out.println("Vuoi fare un'azione? si-no");
+				String risposta3 = myStr.nextLine();
+
+				if (risposta3.equalsIgnoreCase("no")) {
+					i = false;
+					break;
+				}
+
+				System.out.println("1-Vuoi noleggiare un libro?");
+				System.out.println("2-Vuoi consegnare un libro?");
+
+				int risposta = myInt.nextInt();
+
+				switch (risposta) {
+				case 1:
+
+					System.out.println("Ecco i libri disponibili:");
+
+					for (Biblioteca libri : b.getLibri()) {
+						System.out.println(libri);
+
+					}
+
+					System.out.println("Quale libro vuoi noleggiare?");
+
+					int risposta1 = myInt.nextInt() - 1;
+
+					b.prestaLibro(b.getLibri().get(risposta1));
+
+					System.out
+							.println("Hai preso in prestito questo libro: " + b.getLibri().get(risposta1).getTitolo());
+
+					break;
+
+				case 2:
+
+					System.out.println("Quale libro vuoi riconsegnare?");
+
+					int risposta2 = myInt.nextInt() - 1;
+
+					b.restituisciLibro(b.getLibri().get(risposta2));
+
+					System.out.println("Hai riconsegnato questo libro: " + b.getLibri().get(risposta2).getTitolo());
+
+				}
+
+			}
 		}
-
 	}
 }
